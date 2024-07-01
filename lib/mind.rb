@@ -10,7 +10,7 @@ class Mind
   # Define o quanto o aluno se beneficia de cada método de estudo
   def influence_study(content)
     puts "Influencing study on #{content}"
-    f = %i[narration techniques creative actuality criticism practice theory analysis]
+    f = %i[narration techniques expression actuality criticism practice theory analysis]
     (f.index(content) / 7.0).round(2)
   end
 
