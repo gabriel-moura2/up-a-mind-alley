@@ -46,7 +46,7 @@ classDiagram
     +int cognition_level
     +Mind(LearningType t, Mood m)
     +influence_study(Symbol s) float
-    +affect_mood(Relation r)
+    +affects_mood(Relation event)
   }
   class LearningType{
     %%implementation
@@ -57,7 +57,7 @@ classDiagram
     %%state
     +Mind mind
     +influence_study(Subject s) float*
-    +affect_mood(Relation r)*
+    +affects_mood(Relation event)*
   }
   class Subject{
     +String name

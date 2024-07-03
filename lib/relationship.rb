@@ -1,20 +1,20 @@
 class Relationship
   attr_accessor :friendship_level, :compatibility
 
-  def initialize
+  def initialize(compatibility)
     @friendship_level = 0
   end
 
-  # Modifica o nível de relacionamento entre dois alunos
-  def interact
-    puts "Interacting"
-    @friendship_level += 1
+  def interact level
+    @friendship_level += level
   end
 
-  # Define o quanto a interação com outro aluno impacta o humor
   def influence_mood
-    puts "Influencing mood"
-    4
+    if compatibility == :good
+      :happy
+    else
+      :sad
+    end
   end
 end
     

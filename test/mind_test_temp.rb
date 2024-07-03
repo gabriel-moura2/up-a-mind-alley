@@ -13,7 +13,7 @@ class TestMind < Test::Unit::TestCase
     assert_equal 0.86, percent
   end
 
-  def test_affect_mood
-    @m.affect_mood(@r)
+  def test_affects_mood
+    @m.affects_mood(@r)
   end
 end

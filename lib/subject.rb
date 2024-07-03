@@ -1,24 +1,30 @@
 class Subject
-  attr_accessor :name, :difficulty_level, :content
-
-  def initialize
-    @difficulty_level = 1
-    @content = {}
+  # Initializes a new instance of the class.
+  #
+  # @param name [String] The name of the subject.
+  # @return [void]
+  def initialize(name)
+    @name = name
+    @grade = 1
   end
 
-  # Exibe informações sobre um tópico específico
-  def show_content(topic)
-    puts "Showing content for #{topic}"
-    content[topic]
+  
+  # Applies a test to a student and prints the result.
+  #
+  # @param student [Student] The student to apply the test to.
+  # @return [void] This method does not return any value.
+  def apply_test student
+    if student.knowledge_level[@name] >= @grade
+      puts "#{student.name} passed the test on #{@name}"
+    else
+      puts "#{student.name} failed the test on #{@name}"
+    end
   end
 
-  # Avalia o conhecimento do aluno em um tópico específico
-  def apply_test(learner)
-    puts "Applying test on #{name}"
-    learner.do_test(self)
-  end
-
+  # Returns the string representation of the object.
+  #
+  # @return [String] the string representation
   def to_s
-    name
+    @name
   end
 end

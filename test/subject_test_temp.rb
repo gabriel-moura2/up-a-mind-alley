@@ -4,22 +4,21 @@ require 'test/unit'
 
 class TestSubject < Test::Unit::TestCase
   def setup
-    @s = Subject.new
-    @s.name = 'Philosophy'
+    @s = Subject.new 'Philosophy'
     @s.difficulty_level = 1
-    @s.content['ethics'] = :tempus
+    @s.content['ethics'] = :theory
     @l = Student.new
     @l.name = 'John'
-    @l.knowledge_level[@s] = 0
+    @l.knowledge_level[@s] = 1
   end
 
   def test_show_content
-    assert_equal :tempus, @s.show_content('ethics')
+    assert_equal :theory, @s.show_content('ethics')
   end
 
   def test_apply_test
-    note = @s.apply_test(@l)
-    assert_equal 0, note
+    @s.apply_test(@l)
+    assert_equal 1.25, @s.difficulty_level
   end
 end
     
