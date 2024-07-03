@@ -1,10 +1,26 @@
 require './lib/person'
 
+# The Student class represents a student who can study subjects and take tests.
+# Students inherit from the Person class and have a name, knowledge level, and development level.
+# 
+# Attributes:
+# - name [String]: The name of the student.
+# - personality [Personality]: The personality of the student.
+# - knowledge_level [Hash{String => Integer}]: The knowledge level of the student for each subject.
+# - development_level [Integer]: The development level of the student.
+# - relationships [Hash{String => Relationship}]: The relationships of the student with other people.
+#
+# Examples:
+#   student = Student.new("Alice")
+#   student.study(math_subject)
+#   student.do_test(science_subject)
 class Student < Person
   attr_accessor :knowledge_level, :development_level
 
-  # Initializes a new instance of the Student class.
+  
+  # Initializes a new Student object with the given name.
   #
+  # @param name [String] The name of the student.
   # @return [void]
   def initialize name
     super name

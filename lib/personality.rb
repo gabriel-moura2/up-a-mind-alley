@@ -5,7 +5,7 @@ class Personality
   #
   # @return [void]
   def initialize
-    @learning_type = %i[narration technique expression actuality criticism practice theory analysis]
+    @mindset = %i[narration technique expression relevancy criticism practice theory analysis]
     @mood = :interested
     @cognition_level = 7
   end

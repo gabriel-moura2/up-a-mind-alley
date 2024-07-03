@@ -32,6 +32,6 @@ classDiagram
         +int friendship_level
         +Symbol compatibility
         +interact(int level)
-        +influence_mood() Symbol %%mood
+        +influence_mood() Symbol
     }
 ```
