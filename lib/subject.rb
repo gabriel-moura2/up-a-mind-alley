@@ -3,11 +3,10 @@ class Subject
   #
   # @param name [String] The name of the subject.
   # @return [void]
-  def initialize(name)
+  def initialize name
     @name = name
     @grade = 1
   end
-
   
   # Applies a test to a student and prints the result.
   #
@@ -19,6 +18,13 @@ class Subject
     else
       puts "#{student.name} failed the test on #{@name}"
     end
+  end
+
+  # Returns the grade of the subject.
+  #
+  # @return [Integer] the grade
+  def get_grade
+    @grade
   end
 
   # Returns the string representation of the object.

@@ -2,17 +2,13 @@ require './lib/person'
 
 # The Teacher class represents a teacher who can teach a specific subject.
 # Teachers inherit from the Person class and have a name and a subject they teach.
-# 
-# Attributes:
-# - name [String]: The name of the teacher.
-# - subject [Subject]: The subject that the teacher teaches.
-# - personality [Personality]: The personality of the teacher.
-# - relationships [Hash{String => Relationship}]: The relationships of the teacher with other people.
 #
-# Examples:
+# @example
 #   teacher = Teacher.new("John Doe", subject)
 #   teacher.apply_test(student)
 class Teacher < Person
+    # @!attribute [rw] subject
+    #    @return [Subject] The subject that the teacher teaches.
     attr_accessor :subject
 
     # Initializes a new Teacher object with the given name and subject.

@@ -11,7 +11,7 @@ class TestStudent < Test::Unit::TestCase
     @m = Subject.new 'philosophy'
     @s.personality = Personality.new
     @s2.personality = Personality.new
-    @r = Relationship.new :good
+    @r = Relationship.new :conflict
     @s.relationships[@s2.to_s] = @r
     @s2.relationships[@s.to_s] = @r
   end
