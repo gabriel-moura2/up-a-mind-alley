@@ -14,10 +14,11 @@ classDiagram
         +do_test(Subject subject)
     }
     class Personality{
+        -Array~Symbol~ learning_type
         +Symbol mood
         +int cognition_level
         +influence_study()
-        +change_mood(Symbol mood)
+        +change_mood(Relationship relationship)
     }
     class Subject{
         +String name
@@ -32,6 +33,6 @@ classDiagram
         +int friendship_level
         +Symbol compatibility
         +interact(int level)
-        +influence_mood() Symbol %%mood
+        +influence_mood(Symbol mood) Symbol
     }
 ```

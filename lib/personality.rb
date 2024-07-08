@@ -1,11 +1,9 @@
 class Personality
-  attr_accessor :mood, :cognition_level
-  
   # Initializes a new instance of the Mind class with the given learning type and mood.
   #
   # @return [void]
   def initialize
-    @learning_type = %i[narration technique expression actuality criticism practice theory analysis]
+    @learning_type = %i[narration technique expression relevancy criticism practice theory analysis]
     @mood = :interested
     @cognition_level = 7
   end
@@ -17,8 +15,16 @@ class Personality
     (@cognition_level / 7.0).round(2)
   end
 
-  def affects_mood mood
-    @mood = mood
+  def get_mood
+    @mood
+  end
+
+  # Updates the mood based on the influence of the relationship.
+  #
+  # @param relationship [Relationship] The relationship to calculate the influence.
+  # @return [void]
+  def affects_mood relationship
+    @mood = relationship.influence_mood
   end
 end
     

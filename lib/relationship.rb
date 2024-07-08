@@ -3,6 +3,7 @@ class Relationship
 
   def initialize(compatibility)
     @friendship_level = 0
+    @compatibility = compatibility
   end
 
   def interact level
@@ -10,11 +11,12 @@ class Relationship
   end
 
   def influence_mood
-    if compatibility == :good
-      :happy
-    else
-      :sad
+    if @compatibility == :conflict
+      return :angry
+    elsif @compatibility == :identical
+      return :curious
     end
+    :bored
   end
 end
     
