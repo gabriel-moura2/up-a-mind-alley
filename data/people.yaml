@@ -1,0 +1,17 @@
+---
+- !ruby/object:Student
+  name: Joy
+  personality: lover
+  relationships:
+    Sadness: 1
+- !ruby/object:Student
+  name: Sadness
+  personality: seeker
+  relationships:
+    Joy: 1
+- !ruby/object:Student
+  name: Anger
+  personality: healer
+- !ruby/object:Student
+  name: Guilt
+  personality: healer

@@ -1,9 +1,10 @@
-require './lib/student'
-require './lib/subject'
+require './lib/console'
 
-s = Student.new
-s.name = 'John'
-s.age = 20
-m = Subject.new
-m.name = 'Philosophy'
-s.study(m)
+c = Console.new
+c.loop do
+  begin
+    c.process_input
+  #rescue NoMethodError => e
+    #puts "command '#{e.name}' for '#{e.receiver}' not found"
+  end
+end

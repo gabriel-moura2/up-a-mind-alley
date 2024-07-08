@@ -4,7 +4,7 @@ class Person
   # Initializes a new instance of the class.
   #
   # @return [void]
-  def initialize(name)
+  def initialize name
     @name = name
     @relationships = {}
   end
@@ -14,9 +14,10 @@ class Person
   # @param [People] person The person to interact with.
   # @return [void]
   def interact person
-    if relationships.key?(person.to_s)
-      @relationships[person.to_s].interact(1)
-      @personality.affects_mood(@relationships[person.to_s].influence_mood)
+    r = relationships[person]
+    if r
+      r.interact(1)
+      personality.affects_mood r.influence_mood
     end
   end
 
@@ -24,6 +25,6 @@ class Person
   #
   # @return [String] the string representation
   def to_s
-    @name
+    name
   end
 end
